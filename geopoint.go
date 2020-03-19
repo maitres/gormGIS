@@ -15,7 +15,15 @@ type GeoPoint struct {
 }
 
 func (p *GeoPoint) String() string {
-	return fmt.Sprintf("SRID=4326;POINT(%v %v)", p.Lng, p.Lat)
+	return fmt.Sprintf("SRID=%v;POINT(%v %v)", p.Srid(), p.Lng, p.Lat)
+}
+
+func (p *GeoPoint) Point() string {
+	return fmt.Sprintf("POINT(%v %v)", p.Lng, p.Lat)
+}
+
+func (p *GeoPoint) Srid() int {
+	return 4326
 }
 
 func (p *GeoPoint) Scan(val interface{}) error {

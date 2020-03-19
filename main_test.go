@@ -5,7 +5,7 @@ import (
 
 	"github.com/jinzhu/gorm"
 	_ "github.com/lib/pq"
-	"github.com/nferruzzi/gormGIS"
+	"github.com/maitres/gormGIS"
 
 	"testing"
 )
